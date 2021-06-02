@@ -25,7 +25,9 @@ export default function NavBar() {
             </a>
           </Link>
           <Link href="/team">
-            <a className={`text-2xl ${linkCss(pathname === "/team")}`}>Team</a>
+            <a className={`text-2xl ${linkCss(pathname.includes("/team"))}`}>
+              Team
+            </a>
           </Link>
         </div>
       </nav>

@@ -1,8 +1,12 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { APP_BAR_HEIGHT } from "../../components/nav-bar";
 
-import type { InferGetServerSidePropsType } from "next";
+import type {
+  GetServerSidePropsContext,
+  InferGetServerSidePropsType,
+} from "next";
 
 // This API comes from the free "Learn GraphQL with Apollo" tutorials
 const baseURL = `https://odyssey-lift-off-rest-api.herokuapp.com`;
@@ -13,9 +17,19 @@ type Author = {
   photo: string;
 };
 
-export default function Team({
+export default function TeamMember({
   authors,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const { query } = useRouter();
+  const authorId = query.id;
+  if (typeof authorId !== "string") {
+    throw new Error(`authorId must be a string, received ${authorId}`);
+  }
+
+  const author = authors.find(({ id }) => authorId === id);
+
+  console.log(author);
+
   return (
     <div
       className="fixed overflow-hidden w-full flex"
@@ -35,9 +49,18 @@ export default function Team({
         </ul>
       </aside>
       <main className="flex-grow">
-        <h1 className="text-4xl py-4 text-center">
-          Select a team member to get started
-        </h1>
+        {author === undefined ? (
+          <h1 className="text-4xl py-4 text-center">Author not found</h1>
+        ) : (
+          <div className="flex flex-col mx-auto max-w-max px-8">
+            <h1 className="text-4xl py-4">{author.name}</h1>
+            <img
+              alt={author.name}
+              src={author.photo}
+              className="rounded-full h-80 w-80 object-cover mt-2"
+            />
+          </div>
+        )}
       </main>
     </div>
   );
