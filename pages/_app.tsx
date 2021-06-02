@@ -6,9 +6,8 @@ import "../styles/tailwind.css";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="absolute inset-0 overflow-y-auto overflow-x-hidden bg-gray-100">
-      <header>
-        <NavBar />
-      </header>
+      <NavBar />
+
       <Component {...pageProps} />
     </div>
   );
