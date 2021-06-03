@@ -1,3 +1,7 @@
+## Adding Nested/Persistent Layouts in Next.js
+
+> This code was created for a video covering the topic of adding nested and persistent layouts in Next.js application. [Check out the video here.](https://www.youtube.com/watch?v=WOeLxL2DF3E&feature=youtu.be&ab_channel=ReactTipswithBrooksLybrand)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 In this project I show a pattern for nested/persistent layouts in Next.js. I first learned this pattern in a blog by Adam Wathan titled ["Persistent Layout Patterns in Next.js"](https://adamwathan.me/2019/10/17/persistent-layout-patterns-in-nextjs/). I have formed a few of my own opinions and developed my own patterns on top of the 3rd option Adam demonstrations.
