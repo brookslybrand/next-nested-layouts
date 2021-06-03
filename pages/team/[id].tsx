@@ -36,7 +36,12 @@ function TeamMember() {
               {team.map(({ id, name }) => (
                 <li key={id}>
                   <Link href={`/team/${id}`}>
-                    <a className="text-lg font-bold tracking-wide text-gray-800">
+                    <a
+                      className={clsx(
+                        "text-lg font-bold tracking-wide text-gray-800 hover:text-blue-800",
+                        id === authorId ? "text-blue-600" : null
+                      )}
+                    >
                       {name}
                     </a>
                   </Link>
