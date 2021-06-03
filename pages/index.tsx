@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { IndexLayout } from "../layout";
 
 function Home() {
   return (
@@ -6,12 +7,13 @@ function Home() {
       <Head>
         <title>Home</title>
       </Head>
-      <main className="m-4 p-4 border-[16px] border-green-300">
-        <h1 className="text-5xl">This is the home page</h1>
-        <p className="mt-4 text-lg">Feel free to go somewhere else</p>
-      </main>
+
+      <h1 className="text-5xl">This is the home page</h1>
+      <p className="mt-4 text-lg">Feel free to go somewhere else</p>
     </>
   );
 }
+
+Home.PageLayout = IndexLayout;
 
 export default Home;
