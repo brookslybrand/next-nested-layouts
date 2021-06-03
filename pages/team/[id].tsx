@@ -11,16 +11,13 @@ export default function TeamMember() {
   const { team, status } = useTeam();
   const { query } = useRouter();
   const authorId = query.id;
-  if (typeof authorId !== "string") {
-    throw new Error(`authorId must be a string, received ${authorId}`);
-  }
 
   const teamMember = team.find(({ id }) => authorId === id);
 
   return (
     <>
       <Head>
-        <title>Team Member {teamMember?.name}</title>
+        <title>Team Member – {teamMember?.name ?? "Loading..."}</title>
       </Head>
       <div
         className="fixed overflow-hidden w-full flex"
@@ -49,17 +46,19 @@ export default function TeamMember() {
           )}
         </aside>
         <main className="flex-grow">
-          {teamMember === undefined ? (
+          {status === "loading" ? (
+            <h1 className="text-4xl py-4 text-center">Loading...</h1>
+          ) : teamMember === undefined ? (
             <h1 className="text-4xl py-4 text-center">Author not found</h1>
           ) : (
-            <div className="flex flex-col mx-auto max-w-max px-8">
+            <article className="flex flex-col mx-auto max-w-max px-8">
               <h1 className="text-4xl py-4">{teamMember.name}</h1>
               <img
                 alt={teamMember.name}
                 src={teamMember.photo}
                 className="rounded-full h-80 w-80 object-cover mt-2"
               />
-            </div>
+            </article>
           )}
         </main>
       </div>

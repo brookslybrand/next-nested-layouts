@@ -9,7 +9,8 @@ export default function Home() {
       </Head>
 
       <main className="m-4 p-4 border-[16px] border-green-300">
-        <h1>This is the home page!</h1>
+        <h1 className="text-5xl">This is the home page</h1>
+        <p className="mt-4 text-lg">Feel free to go somewhere else</p>
       </main>
     </>
   );
