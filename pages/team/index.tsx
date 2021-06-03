@@ -3,7 +3,7 @@ import Link from "next/link";
 import clsx from "clsx";
 
 import { useFetchTeam } from "../../hooks/useFetchTeam";
-import { TeamLayout } from "../../layout/team";
+import { TeamLayout } from "../../layouts/team";
 
 function Team() {
   const { team, status } = useFetchTeam();

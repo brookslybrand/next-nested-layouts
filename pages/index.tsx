@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { IndexLayout } from "../layout";
+import { IndexLayout } from "../layouts";
 
 function Home() {
   return (

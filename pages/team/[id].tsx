@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Spinner from "../../components/spinner";
 import { useFetchTeam } from "../../hooks/useFetchTeam";
 import { APP_BAR_HEIGHT } from "../../components/nav-bar";
-import { TeamLayout, useTeam } from "../../layout/team";
+import { TeamLayout, useTeam } from "../../layouts/team";
 
 function TeamMember() {
   const { team, status } = useTeam();
