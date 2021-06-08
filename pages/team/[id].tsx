@@ -1,10 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
-import clsx from "clsx";
 import { useRouter } from "next/router";
-import Spinner from "../../components/spinner";
-import { useFetchTeam } from "../../hooks/useFetchTeam";
-import { APP_BAR_HEIGHT } from "../../components/nav-bar";
 import { TeamLayout, useTeam } from "../../layouts/team";
 
 function TeamMember() {

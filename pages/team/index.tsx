@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
-import clsx from "clsx";
 
 import { useFetchTeam } from "../../hooks/useFetchTeam";
 import { TeamLayout } from "../../layouts/team";
