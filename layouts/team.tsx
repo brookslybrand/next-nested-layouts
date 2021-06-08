@@ -37,22 +37,24 @@ export function TeamLayout({ children }: { children: React.ReactNode }) {
           {status === "loading" ? (
             <Spinner className="w-10 h-10 m-auto absolute inset-0" />
           ) : (
-            <ul className="space-y-2">
-              {team.map(({ id, name }) => (
-                <li key={id}>
-                  <Link href={`/team/${id}`}>
-                    <a
-                      className={clsx(
-                        "text-lg font-bold tracking-wide text-gray-800 hover:text-blue-800",
-                        id === memberId ? "text-blue-600" : null
-                      )}
-                    >
-                      {name}
-                    </a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <nav>
+              <ul className="space-y-2">
+                {team.map(({ id, name }) => (
+                  <li key={id}>
+                    <Link href={`/team/${id}`}>
+                      <a
+                        className={clsx(
+                          "text-lg font-bold tracking-wide text-gray-800 hover:text-blue-800",
+                          id === memberId ? "text-blue-600" : null
+                        )}
+                      >
+                        {name}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           )}
         </aside>
         <main className="flex-grow">{children}</main>
