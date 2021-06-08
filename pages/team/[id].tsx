@@ -22,11 +22,14 @@ function TeamMember() {
       ) : (
         <article className="flex flex-col mx-auto max-w-max px-8">
           <h1 className="text-4xl py-4 text-center">{teamMember.name}</h1>
-          <img
-            alt={teamMember.name}
-            src={teamMember.photo}
-            className="rounded-full h-80 w-80 object-cover mt-2"
-          />
+          <div className="relative overflow-hidden rounded-full h-80 w-80 mt-2 bg-blue-100">
+            <img
+              key={teamMember.id}
+              alt={teamMember.name}
+              src={teamMember.photo}
+              className="absolute inset-0 object-cover w-full h-full"
+            />
+          </div>
         </article>
       )}
     </>
