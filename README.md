@@ -1,6 +1,6 @@
 # Adding Nested/Persistent Layouts in Next.js
 
-This code was created for a video covering the topic of adding nested and persistent layouts in Next.js application. [Check out the video here.](https://www.youtube.com/watch?v=WOeLxL2DF3E&feature=youtu.be&ab_channel=ReactTipswithBrooksLybrand)
+This code was created for a video titled ["How to Add Nested/Persistent Layouts in Next.js"](https://www.youtube.com/watch?v=WOeLxL2DF3E&feature=youtu.be&ab_channel=ReactTipswithBrooksLybrand).
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
