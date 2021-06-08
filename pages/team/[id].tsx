@@ -5,9 +5,9 @@ import { TeamLayout, useTeam } from "../../layouts/team";
 function TeamMember() {
   const { team, status } = useTeam();
   const { query } = useRouter();
-  const authorId = query.id;
+  const memberId = query.id;
 
-  const teamMember = team.find(({ id }) => authorId === id);
+  const teamMember = team.find(({ id }) => memberId === id);
 
   return (
     <>
@@ -21,7 +21,7 @@ function TeamMember() {
         <h1 className="text-4xl py-4 text-center">Author not found</h1>
       ) : (
         <article className="flex flex-col mx-auto max-w-max px-8">
-          <h1 className="text-4xl py-4">{teamMember.name}</h1>
+          <h1 className="text-4xl py-4 text-center">{teamMember.name}</h1>
           <img
             alt={teamMember.name}
             src={teamMember.photo}

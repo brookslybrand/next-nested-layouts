@@ -20,7 +20,7 @@ export function useTeam() {
 export function TeamLayout({ children }: { children: React.ReactNode }) {
   const { team, status } = useFetchTeam();
   const { query } = useRouter();
-  const authorId = query.id;
+  const memberId = query.id;
 
   return (
     <TeamContext.Provider value={{ team, status }}>
@@ -44,7 +44,7 @@ export function TeamLayout({ children }: { children: React.ReactNode }) {
                     <a
                       className={clsx(
                         "text-lg font-bold tracking-wide text-gray-800 hover:text-blue-800",
-                        id === authorId ? "text-blue-600" : null
+                        id === memberId ? "text-blue-600" : null
                       )}
                     >
                       {name}
